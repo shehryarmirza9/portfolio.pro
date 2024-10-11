@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shehryar Mirza - Portfolio</title>
+    <style>/* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header and Navbar */
+        .header {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(145deg, rgba(44, 62, 80, 0.9), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #00aaff;
+        }
+        
+        /* Hero Section */
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .hero .highlight {
+            color: #00aaff;
+        }
+        
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #007bff;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .about-section .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        /* Education Section */
+        .education-section {
+            padding: 100px 0;
+            background: linear-gradient(145deg, rgba(44, 62, 80, 0.8), rgba(0, 0, 0, 0.7));
+            text-align: center;
+        }
+        
+        .education-section h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .education-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .education-card {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 32px rgba(0, 255, 255, 0.4);
+        }
+        
+        .education-card h3 {
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+        
+        .education-card p {
+            color: #ddd;
+            font-size: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            padding: 100px 0;
+            background: linear-gradient(145deg, rgba(44, 62, 80, 0.9), rgba(0, 0, 0, 0.7));
+            text-align: center;
+        }
+        
+        .skills-section h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .skills-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .skill-card {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 32px rgba(0, 255, 255, 0.4);
+        }
+        
+        .skill-card i {
+            font-size: 3rem;
+            color: #00aaff;
+            margin-bottom: 15px;
+        }
+        
+        .skill-card h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .skill-card p {
+            color: #ddd;
+            font-size: 1rem;
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            padding: 100px 0;
+            background: linear-gradient(145deg, rgba(44, 62, 80, 0.8), rgba(0, 0, 0, 0.7));
+            position: relative;
+        }
+        
+        .projects-section h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+        
+        .projects-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .project-card {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 32px rgba(0, 255, 255, 0.4);
+        }
+        
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .project-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .project-card p {
+            color: #ddd;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(2, 12, 26, 0.9), rgba(44, 62, 80, 0.8)), url('images/contact-bg.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        
+        .contact-section h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.4);
+            border: 1px solid rgba(0, 255, 255, 0.4);
+        }
+        
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background-color: #00aaff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 30px 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        </style>
+       
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                
+                <div class="menu-toggle"></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Hi, I'm <span class="highlight">Shehryar Mirza</span></h1>
+            <p class="typed-text">A Data Scientist, Web Developer, and AI Enthusiast</p>
+
+
+            <p>------------------</p>
+            <a href="#projects" class="cta-button">Explore My Work</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <img src="images/Pro1.jpeg" alt="Shehryar Mirza" class="profile-photo">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm Shehryar Mirza, a passionate data scientist, web developer, and AI enthusiast. I focus on building scalable, efficient applications and love diving into complex datasets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="education-section" id="education">
+        <h2>Degree & Courses</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>BS Computer Science</h3>
+                <p>Iqra University, 2021 - 2025</p>
+            </div>
+            <div class="education-card">
+                <h3>Foundations of CyberSecurity</h3>
+                <p>Coursera|Google, 2023</p>
+            </div>
+           
+            <div class="education-card">
+                <h3>Connect and Protect:Networks and Network Security</h3>
+                <p>Coursera|Google, 2023</p>
+            </div>
+            <div class="education-card">
+                <h3>Play it Safe:Manage Security Risks</h3>
+                <p>Coursera|Google, 2023</p>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Science</h3>
+                    <p>Python, Pandas, NumPy, TensorFlow</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Regression, Classification, Neural Networks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/sms.jpg" alt="Project 1">
+                    <h3>Student Management System</h3>
+                    <p>An easy to access platform for managing student data, courses, grades, and attendance in educational institutions. It provides a user-friendly interface for administrators, teachers, and students to access and update information. Key features include student registration, course management, attendance tracking, and grade reporting.</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/que2.jpg" alt="Project 2">
+                    <h3>Portfolio Website</h3>
+                    <p>A brief description of the project. What technologies were used, the purpose, and challenges overcome.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-wrapper">
+            <form action="" class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Shehryar Mirza. All Rights Reserved.</p>
+        </div>
+    </footer>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    // 1. Smooth Scrolling for Navbar Links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetSection.offsetTop - 60,  // Adjust for navbar height
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // 2. Scroll to Top Button
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.textContent = "↑";
+    scrollToTopBtn.classList.add('scroll-to-top');
+    document.body.appendChild(scrollToTopBtn);
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 3. Navbar Highlight on Scroll
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 80;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. Typing Effect for Hero Section
+    const typedText = document.querySelector('.typed-text');
+    const words = ["a passionate data scientist.", "a web developer.", "an AI enthusiast."];
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let currentWord = '';
+    let isDeleting = false;
+    
+    function type() {
+        const fullWord = words[wordIndex];
+        
+        if (isDeleting) {
+            currentWord = fullWord.substring(0, letterIndex--);
+        } else {
+            currentWord = fullWord.substring(0, letterIndex++);
+        }
+
+        typedText.textContent = currentWord;
+
+        if (!isDeleting && letterIndex === fullWord.length) {
+            setTimeout(() => (isDeleting = true), 1000); // Pause before deleting
+        } else if (isDeleting && letterIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setTimeout(type, isDeleting ? 100 : 150);
+    }
+    
+    type(); // Start typing effect
+
+    // 5. Toggle Menu for Mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    menuToggle.addEventListener('click', function() {
+        navbar.classList.toggle('open');
+    });
+});
+</script>
+</body>
+</html>
